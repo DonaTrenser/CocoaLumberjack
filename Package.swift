@@ -12,6 +12,7 @@ let swiftSettings: Array<SwiftSetting> = [
     .enableUpcomingFeature("DeprecateApplicationMain"),
     .enableExperimentalFeature("StrictConcurrency"),
     .enableExperimentalFeature("GlobalConcurrency"),
+    .unsafeFlags(["-DENABLE_USER_SCRIPT_SANDBOXING=NO"])
 ]
 
 let package = Package(
@@ -76,6 +77,7 @@ let package = Package(
             name: "CocoaLumberjackSwiftLogBackendTests",
             dependencies: ["CocoaLumberjackSwiftLogBackend"],
             swiftSettings: swiftSettings),
+        
     ]
 )
 
